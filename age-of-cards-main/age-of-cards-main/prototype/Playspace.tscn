@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Background/Background.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Cards/Card Borders etc/Back_Texture.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Cards/Card Borders etc/Gold_Border.png" type="Texture" id=3]
+[ext_resource path="res://Playspace.gd" type="Script" id=4]
+[ext_resource path="res://DeckDraw.gd" type="Script" id=5]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://DiscardPile.gd" type="Script" id=7]
+
+[node name="Playspace" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="CardSlots" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="EnemyLeft" parent="Enemies" instance=ExtResource( 6 )]
+visible = false
+
+[node name="EnemyRight" parent="Enemies" instance=ExtResource( 6 )]
+visible = false
+
+[node name="CardsInPlay" type="Node" parent="."]
+
+[node name="Cards" type="Node" parent="."]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 516.99, 297.859 )
+scale = Vector2( 0.538964, 0.538964 )
+texture = ExtResource( 1 )
+
+[node name="Deck" type="Node2D" parent="."]
+position = Vector2( 876.606, 69.9812 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DeckDraw" type="TextureButton" parent="Deck"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 3 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Discard" type="Node2D" parent="."]
+position = Vector2( 876.606, 300 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DiscardPile" type="TextureButton" parent="Discard"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 3 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

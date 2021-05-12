@@ -1,0 +1,234 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Cards/CardBase.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Cards/Card Borders etc/cardborder.png" type="Texture" id=2]
+[ext_resource path="res://Assets/font/Comfortaa-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Cards/Card Borders etc/background shade.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Cards/Card Borders etc/Back_Texture.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Cards/Card Borders etc/Gold_Border.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 15
+font_data = ExtResource( 3 )
+
+[node name="DummyRoot" type="Node2D"]
+
+[node name="CardBase" type="MarginContainer" parent="."]
+margin_right = 250.0
+margin_bottom = 350.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card" type="Sprite" parent="CardBase"]
+centered = false
+
+[node name="Border" type="Sprite" parent="CardBase"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Bars" type="VBoxContainer" parent="CardBase"]
+margin_right = 250.0
+margin_bottom = 350.0
+
+[node name="TopGap" type="MarginContainer" parent="CardBase/Bars"]
+margin_right = 250.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
+
+[node name="TopBar" type="HBoxContainer" parent="CardBase/Bars"]
+margin_top = 29.0
+margin_right = 250.0
+margin_bottom = 47.0
+
+[node name="LeftGap" type="MarginContainer" parent="CardBase/Bars/TopBar"]
+margin_right = 25.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="Name" type="MarginContainer" parent="CardBase/Bars/TopBar"]
+margin_left = 29.0
+margin_right = 98.0
+margin_bottom = 18.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CardBase/Bars/TopBar/Name"]
+margin_right = 69.0
+margin_bottom = 18.0
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CardBase/Bars/TopBar/Name"]
+margin_right = 69.0
+margin_bottom = 18.0
+
+[node name="Name" type="Label" parent="CardBase/Bars/TopBar/Name/CenterContainer"]
+margin_right = 69.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "Footman"
+
+[node name="MidGap" type="MarginContainer" parent="CardBase/Bars/TopBar"]
+margin_left = 102.0
+margin_right = 211.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+
+[node name="Cost" type="MarginContainer" parent="CardBase/Bars/TopBar"]
+margin_left = 215.0
+margin_right = 221.0
+margin_bottom = 18.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CardBase/Bars/TopBar/Cost"]
+margin_right = 6.0
+margin_bottom = 18.0
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CardBase/Bars/TopBar/Cost"]
+margin_right = 6.0
+margin_bottom = 18.0
+
+[node name="Cost" type="Label" parent="CardBase/Bars/TopBar/Cost/CenterContainer"]
+margin_right = 6.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "1"
+
+[node name="RightGap" type="MarginContainer" parent="CardBase/Bars/TopBar"]
+margin_left = 225.0
+margin_right = 250.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="MidGap" type="MarginContainer" parent="CardBase/Bars"]
+margin_top = 51.0
+margin_right = 250.0
+margin_bottom = 228.0
+size_flags_vertical = 3
+
+[node name="SpecialText" type="HBoxContainer" parent="CardBase/Bars"]
+margin_top = 232.0
+margin_right = 250.0
+margin_bottom = 250.0
+
+[node name="LeftGap" type="MarginContainer" parent="CardBase/Bars/SpecialText"]
+margin_right = 25.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="Text" type="MarginContainer" parent="CardBase/Bars/SpecialText"]
+margin_left = 29.0
+margin_right = 76.0
+margin_bottom = 18.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CardBase/Bars/SpecialText/Text"]
+margin_right = 47.0
+margin_bottom = 18.0
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CardBase/Bars/SpecialText/Text"]
+margin_right = 47.0
+margin_bottom = 18.0
+
+[node name="Type" type="Label" parent="CardBase/Bars/SpecialText/Text/CenterContainer"]
+margin_right = 47.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "Melee"
+
+[node name="MidGap" type="MarginContainer" parent="CardBase/Bars/SpecialText"]
+margin_left = 80.0
+margin_right = 250.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+
+[node name="LowerGap" type="MarginContainer" parent="CardBase/Bars"]
+margin_top = 254.0
+margin_right = 250.0
+margin_bottom = 294.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="BottomBar" type="HBoxContainer" parent="CardBase/Bars"]
+margin_top = 298.0
+margin_right = 250.0
+margin_bottom = 316.0
+
+[node name="LeftGap" type="MarginContainer" parent="CardBase/Bars/BottomBar"]
+margin_right = 25.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="Attack" type="MarginContainer" parent="CardBase/Bars/BottomBar"]
+margin_left = 29.0
+margin_right = 48.0
+margin_bottom = 18.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CardBase/Bars/BottomBar/Attack"]
+margin_right = 19.0
+margin_bottom = 18.0
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CardBase/Bars/BottomBar/Attack"]
+margin_right = 19.0
+margin_bottom = 18.0
+
+[node name="AandR" type="Label" parent="CardBase/Bars/BottomBar/Attack/CenterContainer"]
+margin_right = 19.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "1/1"
+
+[node name="MidGap" type="MarginContainer" parent="CardBase/Bars/BottomBar"]
+margin_left = 52.0
+margin_right = 208.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+
+[node name="Health" type="MarginContainer" parent="CardBase/Bars/BottomBar"]
+margin_left = 212.0
+margin_right = 221.0
+margin_bottom = 18.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CardBase/Bars/BottomBar/Health"]
+margin_right = 9.0
+margin_bottom = 18.0
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="CardBase/Bars/BottomBar/Health"]
+margin_right = 9.0
+margin_bottom = 18.0
+
+[node name="Health" type="Label" parent="CardBase/Bars/BottomBar/Health/CenterContainer"]
+margin_right = 9.0
+margin_bottom = 18.0
+custom_fonts/font = SubResource( 1 )
+text = "2"
+
+[node name="RightGap" type="MarginContainer" parent="CardBase/Bars/BottomBar"]
+margin_left = 225.0
+margin_right = 250.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 25, 0 )
+
+[node name="BottomGap" type="MarginContainer" parent="CardBase/Bars"]
+margin_top = 320.0
+margin_right = 250.0
+margin_bottom = 350.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Focus" type="TextureButton" parent="CardBase"]
+margin_right = 250.0
+margin_bottom = 350.0
+texture_hover = ExtResource( 6 )
+expand = true
+
+[node name="CardBack" type="Sprite" parent="CardBase"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="HighlightBorder" type="Sprite" parent="CardBase"]
+visible = false
+z_index = 1
+texture = ExtResource( 6 )
+centered = false
+[connection signal="mouse_entered" from="CardBase/Focus" to="CardBase" method="_on_Focus_mouse_entered"]
+[connection signal="mouse_exited" from="CardBase/Focus" to="CardBase" method="_on_Focus_mouse_exited"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Cards/Enemies/Enemy1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Cards/Card Borders etc/Gold_Border.png" type="Texture" id=4]
+
+[node name="Enemy" type="MarginContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 500.0
+margin_bottom = 557.0
+
+[node name="ImageContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 500, 500 )
+
+[node name="Image" type="Sprite" parent="VBoxContainer/ImageContainer"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Bar" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 504.0
+margin_bottom = 557.0
+
+[node name="HighlightBorder" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+centered = false
